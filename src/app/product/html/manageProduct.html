@@ -1,0 +1,30 @@
+
+<mat-card style="width: 26% ;margin-left:5%; margin-top: 1%;">
+  
+  <h2 style="text-align: center;">ADD / EDIT PRODUCT</h2>
+  <form [formGroup]="manageProductFormGroup" style="margin-left:3% ;">
+
+    <mat-form-field>
+        <mat-label>Product Name</mat-label>
+        <input matInput formControlName="productName">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Product Cost</mat-label>
+        <input matInput formControlName="productCost">
+    </mat-form-field> 
+    <br>
+    <mat-form-field >
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <br>
+
+    <div>
+      <button mat-raised-button color="accent" (click)="saveProduct()">{{toggleButtonName}}</button>
+      <button  style="margin-left:9% ;" mat-raised-button color="warn" (click)="goBack()">GO BACK</button>
+    </div>
+   
+ </form> 
+
+</mat-card>

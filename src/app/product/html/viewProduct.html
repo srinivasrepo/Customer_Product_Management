@@ -1,0 +1,26 @@
+<mat-card style="width: 40% ;margin-left:5%; margin-top: 1%;">
+  
+    <h2 style="text-align: center;color: rgb(110, 31, 106);">PRODUCT DETAILS</h2>
+
+    <div>
+        <mat-label><b>productName:</b> &nbsp; 
+            {{productObj?.productName}}
+        </mat-label><br>
+        <mat-label><b>productCost:</b>&nbsp;
+            {{productObj?.productCost}}
+        </mat-label><br>
+        <mat-label><b>status:</b>&nbsp;
+            {{productObj?.status}}
+        </mat-label><br>
+        <mat-label><b>description:</b>&nbsp;
+            {{productObj?.description}}
+        </mat-label><br>
+        <mat-label><b>productCode:</b>&nbsp;
+            {{productObj?.productCode}}
+        </mat-label>
+    </div>
+
+    <br>
+    <button  style="margin-left:9% ;" mat-raised-button color="accent" (click)="goBack()">GO BACK</button>
+    
+</mat-card>    

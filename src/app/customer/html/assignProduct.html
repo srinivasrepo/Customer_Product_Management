@@ -1,0 +1,18 @@
+<h2 style="text-align: center;">ASSIGN PRODUCT HERE</h2>
+<div>
+
+    <ul  >
+         <mat-grid-list  cols="3"  rowHeight="70px"  class="testAlign">
+        <mat-grid-tile *ngFor="let obj of productList" >
+            <mat-checkbox [(ngModel)]="obj.isSelect">{{obj.productName}}</mat-checkbox>
+        </mat-grid-tile>
+    </mat-grid-list> 
+    </ul>
+    
+</div>
+
+
+<div>
+    <button mat-raised-button color="primary" (click)="assign()">Assign</button>&nbsp;&nbsp;
+    <button mat-raised-button color="accent" (click)="back()">Back</button>&nbsp;&nbsp;
+</div>

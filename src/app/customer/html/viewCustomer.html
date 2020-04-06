@@ -1,0 +1,19 @@
+<mat-card style="width: 90% ;margin-left:5%; margin-top: 1%;">
+<h2 style="text-align: center;">VIEW PRODUCT HERE</h2>
+  <div>
+    <mat-label><strong>customerName:</strong>&nbsp;&nbsp;    {{customerObj?.customerName}}</mat-label><br>
+    <mat-label><strong>customerCode:</strong>&nbsp; &nbsp; {{customerObj?.customerCode}}</mat-label><br>
+    <mat-label><strong>status:</strong>&nbsp;&nbsp; {{customerObj?.status}}</mat-label><br>
+    <mat-label><strong>customerType:</strong>&nbsp;&nbsp; {{customerObj?.customerType}}</mat-label><br>
+    <mat-label><strong>assignedProducts:</strong>&nbsp;&nbsp; {{customerObj?.assignedProducts}}</mat-label>
+</div>
+
+
+<grid [headers]=Headers [dataSource]='dataSource' ></grid>
+
+<br>
+
+<div>   
+    <button mat-raised-button color="accent" (click)="back()">Back</button>
+</div>
+</mat-card>

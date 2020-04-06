@@ -1,0 +1,34 @@
+<h1 style="text-align: center; font-weight: 500; margin-top: 2%;"> SEARCH PRODUCT HERE</h1>
+
+<div class="container" style="margin: 2%;">
+  <form [formGroup]="searchProductFormGroup" >
+      
+      <mat-form-field >
+          <mat-label>Product Name</mat-label>
+          <input matInput formControlName="productName">
+      </mat-form-field> &nbsp;&nbsp;&nbsp;
+
+      <mat-form-field >
+          <mat-label>Select Status </mat-label>
+          <mat-select formControlName="statusId">
+             <mat-option *ngFor="let obj of statusList" [value]="obj.statusID">{{obj.status}}</mat-option>  
+          </mat-select>
+      </mat-form-field>
+
+      <div>
+          <button mat-raised-button color="primary" (click)="search('search','anEmptyString')">Search</button> &nbsp; &nbsp;
+          <button mat-raised-button color="primary" (click)="search('ALL','anEmptyString')">Search All</button> &nbsp;&nbsp;
+        <span> <button mat-raised-button color="accent"  (click)="addNewProduct()">Add Product</button></span> 
+      </div>
+<br/>
+      <grid (onActionClicked)="onActionClicked($event)" [headers]="Headers" [actions]="actions" [dataSource]="dataSource"></grid>
+
+      <div>
+        <mat-paginator [length]="totalNumberOfRows" pageSize="10" [pageIndex]="pageIndex" (page)="pageEvent($event)">          
+        </mat-paginator>
+      </div>
+
+  
+
+  </form>    
+</div>

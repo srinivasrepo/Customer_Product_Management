@@ -1,0 +1,26 @@
+<mat-card style="margin: 8% 20% 8% 50%;background-color: rgb(250, 250, 250);">
+
+      <br>
+      
+      <h2 style="text-align: center "><span style="border:  solid rgb(66, 9, 119); padding: 2%;color: rgb(66, 9, 119);">LOGIN FORM</span></h2>
+
+      <form [formGroup]="loginForm" style="text-align: center" >
+        
+        <mat-form-field>
+          <mat-label>User Name</mat-label>
+          <input matInput formControlName="usernameL">
+        </mat-form-field>
+      <br>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="passwordL">
+        </mat-form-field>
+      <br>
+      <button mat-raised-button (click)="login()" color="primary">LOGIN</button>  
+      
+    </form>
+
+
+</mat-card>
+
+

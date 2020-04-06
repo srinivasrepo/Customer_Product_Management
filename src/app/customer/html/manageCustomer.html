@@ -1,0 +1,130 @@
+<h2 style="margin-left:28%;">ADD / EDIT CUSTOMER</h2>
+
+<mat-card style="width:70% ;margin-left:3%; margin-top: 1%;">
+  
+    
+    <form [formGroup]="manageCustomerFormGroup" >
+ <div style="margin-left:2% ;">
+      <mat-form-field>
+          <mat-label>Customer Name</mat-label>
+          <input matInput formControlName="customerName">
+      </mat-form-field> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+      <mat-form-field>
+        <mat-select placeholder="Select type" formControlName="CustomerTypeid">
+            <mat-option *ngFor="let obj of custTypelist" [value]="obj.catItemID">{{obj.catItem}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+        <!-- ADDRESS -->
+        <br> 
+        <hr>
+        <br> 
+
+ <!-- <form [formGroup]="manageCustomerFormGroup" style="margin-left:13% ;"> -->
+    <div style="margin-left:2% ;">
+       <h2> ADDRESS</h2>
+        <mat-form-field>
+            <input matInput placeholder="Address" formControlName="address">
+        </mat-form-field> &nbsp;&nbsp;
+        <br>
+        <!-- country -->
+        <mat-form-field>
+            <mat-select placeholder="Select country" formControlName="country">
+                <mat-option *ngFor="let obj of countryList" [value]="obj.catItemID">{{obj.catItem}}</mat-option>
+            </mat-select>
+        </mat-form-field> &nbsp;&nbsp;
+
+        <!-- state -->
+        <mat-form-field>
+            <input matInput placeholder="State" formControlName="stateName">
+        </mat-form-field> &nbsp;&nbsp;
+        <!-- city -->
+        <mat-form-field>
+            <input matInput placeholder="City" formControlName="city">
+        </mat-form-field> &nbsp;&nbsp;
+        <!-- zip -->
+        <mat-form-field>
+            <input matInput placeholder="Zip Code" formControlName="zip">
+        </mat-form-field>
+        <br>
+        <br>
+            
+                <button  mat-raised-button color="primary" (click)="addAddress()" style="margin-left: 70% ;">ADD ADDRESS</button>
+            
+        </div>        
+    </form> 
+
+   
+   <br> 
+   <hr>
+   <br> 
+
+ <!-- grid-->
+ <grid (onActionClicked)="onActionClicked($event)" [headers]='headers' [dataSource]='dataSource'
+ [actions]='actions'></grid>
+
+ <br>
+ <br>
+
+   <div style="margin-left: 8%;">
+    <button mat-raised-button color="accent" (click)="saveCustomer()">{{togglingButton}}</button>
+    <button  style="margin-left:9% ;" mat-raised-button color="warn" (click)="goBack()">GO BACK</button>
+  </div>
+  </mat-card>
+
+  
+<!-- 
+<h2 style="margin-left:28%;">ADD / EDIT CUSTOMER</h2>
+
+<mat-card style="width:70% ;margin-left:3%; margin-top: 1%;">
+  
+    
+    <form [formGroup]='manageCustForm'> 
+        <mat-form-field>
+            <input matInput placeholder="Customer Name" formControlName="cname" maxlength="30">
+        </mat-form-field>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+        <mat-form-field>
+            <mat-select matInput placeholder="Customer Type" formControlName='type'>
+                <mat-option>None</mat-option>
+               <mat-option *ngFor='let data of custmerlist' [value]='data.catItemID'>{{data.catItem}}</mat-option> 
+            </mat-select>
+        </mat-form-field> <hr>
+    
+        <div>
+            <mat-form-field>
+                <textarea matInput placeholder="Address" formControlName="maddress"></textarea>
+            </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field>
+                <mat-select matInput placeholder="Country" formControlName='mcountry'>
+                    <mat-option>None</mat-option>
+                   <mat-option *ngFor='let data of countryList' [value]='data.catItemID'>{{data.catItem}}</mat-option> 
+                </mat-select>
+            </mat-form-field> <br>
+            <mat-form-field>
+                <input matInput placeholder="State" formControlName="mstate">
+            </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field>
+                <input matInput placeholder="City" formControlName="mcity">
+            </mat-form-field> <br>
+            <mat-form-field>
+                <input matInput placeholder="Zip-Code" formControlName="mzip"  maxlength="10">
+    
+            </mat-form-field>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <br>
+            <button *ngIf="isDisablebttn" style="margin-left: 90%;" mat-raised-button color="primary" (click)='add()'>ADD</button>
+        </div>
+    
+    </form>
+    
+       <grid (onActionClicked)="onActionClicked($event)" [headers]="Headers" [dataSource]="dataSource"  [actions]="actions"></grid>
+        
+    <br> <br>
+       
+    <div>
+        <button mat-raised-button color="primary" (click)='save()'>{{enableBtn}}</button>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-raised-button color="accent" (click)='back()'>BACK</button>
+    </div>
+    
+  </mat-card> -->
